@@ -22,7 +22,9 @@ are interchangable in terms of the order, just depends on which is more impressi
 11. Project titles should be specific, example: "suggestion box website for school club" (bad) vs "student organization feedback system" (good).
 12. Formatting and nomenclature should be consistent throughout the entire resume.
 14. There should be no spelling or grammar mistakes throughout the whole resume.
-
+15. When reviewing, be sure to consider that some things may just be a formatting problem because of the way pdf converts to text, so be a little less strict on that but be sure to still mention it.
+16. High school education should not be listed unless it is really impressive or has great achievement, same with anything that is non-technical.
+17. GPA/Final grade from school should not be included unless it is anything above 3.9 (on a 4.0 scale), also GPA should always be in a 4.0 scale, even if the school doesn't necessarily follow a 4.0 scale.
 Resume guide from University of Waterloo, summarized:
 Based on the guide, an effective engineering resume's primary goal is to secure an interview. To achieve this, you should first define a personal objective statement to guide the resume's content, ensuring every part is relevant to the type of role you are seeking. This statement is for your use only and should not be added to the resume itself. It is highly recommended to tailor different versions of your resume for specific industries (e.g., hardware vs. software) rather than for individual companies, as this better demonstrates technical depth. The content should focus on key sections: Education, Skills, Experiences, and Projects. Information to exclude includes high school details, non-technical jobs from before university, summary paragraphs, photos, and irrelevant hobbies.
 
@@ -58,10 +60,10 @@ export const reviewResume = async (req, res, next) => {
           "Review resumes using the provided guide and give clear, structured feedback." +
           "Do not use any subjective words. Remain professional." +
           "It is imperative and important that you be as strict as possible when following these guidelines." +
-          "Give a final rating out of 100. The feedback returned should start with something along these lines. After reviewing your " +
+          "The feedback returned should start with something along these lines. After reviewing your" +
           "resume and comparing it to a strong set of base guidelines, as well as many resume guides from T20 schools, " +
-          "your rating for your resume is (rating) out of 100." +
-          "Do not offer to review again, this interaction with the user will be one-way." +
+          "here is your feedback" +
+          "Do not offer to review again, this interaction with the user will be one-way. Do not use any bolded text. Do not use a point system. Be sure to include a summary of feedback and some actionable steps at the end. Do not include a closing statement. Remember to be less strict on the formatting and links since it could be a matter of conversion between pdf and raw text." +
           "Here is the resume guide: " +
           masterPrompt,
       },
