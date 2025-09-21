@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import fs from "fs/promises";
 import path from "path";
-import PdfParse from "pdf-parse";
+import pdf from "pdf-parse/lib/pdf-parse.js";
 
 const client = new OpenAI({ apiKey: process.env.API_KEY });
 
@@ -42,8 +42,8 @@ export const reviewResume = async (req, res, next) => {
       next(error);
     }
 
-    const pdfBuffer = await fs.readFile(file.path);
-    const pdfData = await PdfParse(pdfBuffer);
+    const pdfBuffer = file.buffer;
+    const pdfData = await pdf(pdfBuffer);
     const resumeText = pdfData.text;
     console.log(resumeText);
 
