@@ -59,7 +59,7 @@ contactForm.addEventListener("submit", async (e) => {
 
   const formData = new FormData(contactForm);
 
-  const res = await fetch("http://cooked-vercel.app/api/contact", {
+  const res = await fetch("http://cooked-resume.vercel.app/api/contact", {
     method: "POST",
     body: formData,
   });
@@ -70,5 +70,5 @@ contactForm.addEventListener("submit", async (e) => {
 
 const downloadBtn = document.getElementById("downloadBtn");
 downloadBtn.addEventListener("click", async () => {
-  window.location.href = "https://cooked-vercel.app/api/download-guides";
+  window.location.href = "https://cooked-resume.vercel.app/api/download-guides";
 });
