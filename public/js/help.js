@@ -66,14 +66,13 @@ contactForm.addEventListener("submit", async (e) => {
 
     if (!res.ok) {
       const errorText = await res.text();
-      console.log(errorText);
-      throw new Error("Failed to upload file");
+      alert(errorText);
     }
     const data = await res.json();
+    alert(data.message);
   } catch (error) {
     console.log(error.message);
   }
-  alert(data.message);
 });
 
 const downloadBtn = document.getElementById("downloadBtn");
