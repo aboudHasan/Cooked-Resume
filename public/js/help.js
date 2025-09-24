@@ -59,7 +59,7 @@ contactForm.addEventListener("submit", async (e) => {
 
   const formData = new FormData(contactForm);
 
-  const res = await fetch("http://cooked-resume.vercel.app/api/contact", {
+  const res = await fetch("https://cooked-resume.vercel.app/api/contact", {
     method: "POST",
     body: formData,
   });
