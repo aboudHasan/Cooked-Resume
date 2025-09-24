@@ -47,11 +47,38 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
   min-height: 100vh;
+}
+
+.help-button {
+  position: fixed;
+  top: 2rem;
+  right: 5.5rem;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  width: 46px;
+  height: 46px;
+}
+
+.help-button:hover {
+  background-color: var(--bg-secondary);
 }
 
 .theme-toggle {
@@ -230,7 +257,6 @@ body {
   font-size: 1rem;
 }
 
-/* Buttons */
 .btn {
   padding: 0.625rem 1.25rem;
   border-radius: 8px;
@@ -307,6 +333,12 @@ body {
     justify-content: center;
   }
 
+  .help-button {
+    top: 1rem;
+    right: 4.5rem;
+    margin-bottom: 6px;
+  }
+
   .theme-toggle {
     top: 1rem;
     right: 1rem;
@@ -315,5 +347,134 @@ body {
   .feedback-container {
     padding: 1.5rem;
     font-size: 0.875rem;
+  }
+}
+
+.help-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.description-section {
+  margin-bottom: 3rem;
+}
+
+.description-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.contact-section {
+  margin-bottom: 3rem;
+}
+
+.contact-form {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.file-upload-area {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--bg-tertiary);
+  position: relative;
+}
+
+.file-upload-area:hover {
+  border-color: var(--accent-color);
+  background-color: var(--bg-primary);
+}
+
+.file-upload-area.drag-over {
+  border-color: var(--accent-color);
+  background-color: var(--bg-primary);
+}
+
+.file-upload-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  display: block;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.download-section {
+  margin-bottom: 2rem;
+}
+
+.download-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .help-content {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .file-upload-area {
+    padding: 1.5rem;
   }
 }
