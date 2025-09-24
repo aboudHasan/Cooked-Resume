@@ -66,6 +66,7 @@ contactForm.addEventListener("submit", async (e) => {
 
     if (!res.ok) {
       const errorText = await res.text();
+      console.log(errorText);
       throw new Error("Failed to upload file");
     }
     const data = await res.json();
