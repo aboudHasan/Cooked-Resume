@@ -58,17 +58,24 @@ contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = new FormData(contactForm);
+  try {
+    const res = await fetch("https://cooked-resume.vercel.app/api/contact", {
+      method: "POST",
+      body: formData,
+    });
 
-  const res = await fetch("https://cooked-resume.vercel.app/api/contact", {
-    method: "POST",
-    body: formData,
-  });
-
-  const data = await res.json();
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error("Failed to upload file");
+    }
+    const data = await res.json();
+  } catch (error) {
+    console.log(error.message);
+  }
   alert(data.message);
 });
 
 const downloadBtn = document.getElementById("downloadBtn");
-downloadBtn.addEventListener("click", async () => {
+downloadBtn.addEventListener("click", () => {
   window.location.href = "https://cooked-resume.vercel.app/api/download-guides";
 });
