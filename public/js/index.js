@@ -60,8 +60,13 @@ async function submitResume(file) {
       };
     }
 
+    console.log("text received");
+
     const data = await response.json();
-    showResults(data.feedback);
+    console.log("text formatted");
+    showResults(data.output[1].content[0].text);
+
+    console.log("text output");
   } catch (error) {
     showError({
       message: error.message || "An unexpected error occurred",
