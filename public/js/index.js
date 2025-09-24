@@ -12,7 +12,7 @@ const themeToggle = document.getElementById("themeToggle");
 const errorMessage = document.getElementById("errorMessage");
 const errorCode = document.getElementById("errorCode");
 
-const API_URL = window.location.href + "api/review-resume";
+const API_URL = window.location.origin + "/api/review-resume";
 
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";

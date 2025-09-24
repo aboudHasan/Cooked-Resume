@@ -1,4 +1,5 @@
-const API_URL = window.location.href + "api/downloadGuides";
+const downloadAPI = window.location.origin + "/api/download-guides";
+const contactAPI = window.location.origin + "/api/contact";
 const themeToggle = document.getElementById("themeToggle");
 const currentTheme = localStorage.getItem("theme") || "light";
 
@@ -59,7 +60,7 @@ contactForm.addEventListener("submit", async (e) => {
 
   const formData = new FormData(contactForm);
   try {
-    const res = await fetch("https://cooked-resume.vercel.app/api/contact", {
+    const res = await fetch(contactAPI, {
       method: "POST",
       body: formData,
     });
@@ -73,5 +74,5 @@ contactForm.addEventListener("submit", async (e) => {
 
 const downloadBtn = document.getElementById("downloadBtn");
 downloadBtn.addEventListener("click", () => {
-  window.location.href = "https://cooked-resume.vercel.app/api/download-guides";
+  window.location.href = downloadAPI;
 });
