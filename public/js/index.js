@@ -64,7 +64,7 @@ async function submitResume(file) {
 
     const data = await response.json();
     console.log("text formatted");
-    showResults(data.output[1].content[0].text);
+    showResults(data.output_text);
 
     console.log("text output");
   } catch (error) {
