@@ -2,6 +2,7 @@ const downloadAPI = window.location.origin + "/api/download-guides";
 const contactAPI = window.location.origin + "/api/contact";
 const themeToggle = document.getElementById("themeToggle");
 const currentTheme = localStorage.getItem("theme") || "light";
+const submitButton = document.querySelector("#submit-button");
 
 document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -57,6 +58,13 @@ fileUploadArea.addEventListener("drop", (e) => {
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  submitButton.classList.remove("btn-primary");
+  submitButton.classList.add("btn-secondary");
+  setTimeout(() => {
+    submitButton.classList.remove("btn-secondary");
+    submitButton.classList.add("btn-primary");
+  }, 1000);
 
   const formData = new FormData(contactForm);
   try {

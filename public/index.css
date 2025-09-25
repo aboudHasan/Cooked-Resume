@@ -131,6 +131,10 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.submit-button:click {
+  background-color: red;
+}
+
 .subtitle {
   color: var(--text-secondary);
   font-size: 1.125rem;
