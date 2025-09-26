@@ -4,7 +4,6 @@ import pdf from "pdf-parse/lib/pdf-parse.js";
 const chatgpt = new OpenAI({ apiKey: process.env.API_KEY });
 const vectorFile = `${process.env.FILE_ID_1}`;
 const vectorFile2 = `${process.env.FILE_ID_2}`;
-const vectorFile3 = `${process.env.FILE_ID_3}`;
 
 export const reviewResume = async (req, res, next) => {
   try {
